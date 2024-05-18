@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:managing_with_subscriptions/on_board/answer.dart';
 
-// ignore: camel_case_types
 class OnBoarding extends StatefulWidget {
   const OnBoarding({
     super.key,
@@ -11,7 +10,6 @@ class OnBoarding extends StatefulWidget {
   State<OnBoarding> createState() => _OnBoardingState();
 }
 
-// ignore: camel_case_types
 class _OnBoardingState extends State<OnBoarding> {
   PageController controller = PageController();
   int onLastPage = 0;

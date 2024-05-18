@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-// <<<<<<< z1cco
-// import 'package:managing_with_subscriptions/on_board/answer.dart';
-// import 'package:managing_with_subscriptions/on_board/splash_screen.dart';
-// =======
-// import 'package:managing_with_subscriptions/App/screens/home_screen.dart';
+import 'package:managing_with_subscriptions/app/theme/app_colors.dart';
+import 'package:managing_with_subscriptions/on_board/answer.dart';
+import 'package:managing_with_subscriptions/on_board/on_boarding.dart';
 
-// >>>>>>> master
 
 void main() {
   runApp(const App());
@@ -15,16 +12,12 @@ class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-//   Widget build(BuildContext context) {
-// <<<<<<< z1cco
-//     return const MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: AnswerQuesion(),
-// =======
-//     return MaterialApp(
-//       // theme: ThemeData(scaffoldBackgroundColor: AppColors.scaffoldBg),
-//       home: HomeScreen(),
-// >>>>>>> master
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OnBoarding(),
+      theme: ThemeData(scaffoldBackgroundColor: AppColors.white),
     );
   }
 }
+   
