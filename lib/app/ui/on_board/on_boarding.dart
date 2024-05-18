@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:managing_with_subscriptions/on_board/answer.dart';
+import 'package:managing_with_subscriptions/app/ui/on_board/answer.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({

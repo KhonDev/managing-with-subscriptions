@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:managing_with_subscriptions/on_board/on_boarding.dart';
+import 'package:managing_with_subscriptions/app/ui/on_board/on_boarding.dart';
 
 class SpalshScreen extends StatefulWidget {
   const SpalshScreen({super.key});

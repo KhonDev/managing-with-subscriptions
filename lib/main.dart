@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:managing_with_subscriptions/app/theme/app_colors.dart';
-import 'package:managing_with_subscriptions/on_board/answer.dart';
-import 'package:managing_with_subscriptions/on_board/on_boarding.dart';
+import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
+import 'package:managing_with_subscriptions/app/ui/on_board/answer.dart';
+import 'package:managing_with_subscriptions/app/ui/on_board/on_boarding.dart';
 
 
 void main() {
