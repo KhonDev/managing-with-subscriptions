@@ -40,7 +40,6 @@ class SettingsScreen extends StatelessWidget {
         ),
         CustomDeleteButton(title: 'Delete'),
         Spacer(),
-        
       ],
     );
   }
