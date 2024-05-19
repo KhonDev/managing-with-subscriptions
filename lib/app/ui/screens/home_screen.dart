@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
-import 'package:managing_with_subscriptions/app/ui/screens/add_service.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: AddService(),
+      body: AnswerQuesion(),
     );
   }
 }
