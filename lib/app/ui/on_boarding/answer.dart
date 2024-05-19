@@ -91,59 +91,56 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 48, 16.0, 27),
-            child: Align(
-              alignment: const Alignment(0.0, 1.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 1.5,
-                      color: AppColors.deepBlue,
-                      width: 40,
-                    ),
+          Align(
+            alignment: const Alignment(0.0, 1.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 1.5,
+                    color: AppColors.deepBlue,
+                    width: 40,
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      height: 1.5,
-                      color: onLastPage >= 1
-                          ? AppColors.deepBlue
-                          : const Color.fromRGBO(212, 237, 255, 100),
-                      width: 40,
-                    ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    height: 1.5,
+                    color: onLastPage >= 1
+                        ? AppColors.deepBlue
+                        : const Color.fromRGBO(212, 237, 255, 100),
+                    width: 40,
                   ),
-                  Expanded(
-                    child: Container(
-                      height: 1.5,
-                      color: onLastPage >= 2
-                          ? AppColors.deepBlue
-                          : const Color.fromRGBO(212, 237, 255, 100),
-                      width: 40,
-                    ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 1.5,
+                    color: onLastPage >= 2
+                        ? AppColors.deepBlue
+                        : const Color.fromRGBO(212, 237, 255, 100),
+                    width: 40,
                   ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      height: 1.5,
-                      color: onLastPage >= 3
-                          ? AppColors.deepBlue
-                          : const Color.fromRGBO(212, 237, 255, 100),
-                      width: 40,
-                    ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    height: 1.5,
+                    color: onLastPage >= 3
+                        ? AppColors.deepBlue
+                        : const Color.fromRGBO(212, 237, 255, 100),
+                    width: 40,
                   ),
-                  Expanded(
-                    child: Container(
-                      height: 1.5,
-                      color: onLastPage == 4
-                          ? AppColors.deepBlue
-                          : const Color.fromRGBO(212, 237, 255, 100),
-                      width: 40,
-                    ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 1.5,
+                    color: onLastPage == 4
+                        ? AppColors.deepBlue
+                        : const Color.fromRGBO(212, 237, 255, 100),
+                    width: 40,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],
@@ -177,43 +174,40 @@ class AnswerTile extends StatelessWidget {
       questionthrees,
       questionfourths
     ];
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 56.0),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SvgPicture.asset('assets/vectors/backblue.svg'),
-              const SizedBox(width: 4),
-              const Text(
-                'Back',
-                style: TextStyles.s16w400cblue,
-              )
-            ],
-          ),
-          const SizedBox(height: 16),
-          Text(
-            text,
-            style: TextStyles.header1s32,
-          ),
-          const SizedBox(height: 28.0),
-          Column(
-            children: List.generate(
-              answers.length,
-              (index) => Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: MyAnswerContainer(
-                  text: answers[index],
-                  onTap: onTap,
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 56.0),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset('assets/vectors/backblue.svg'),
+            const SizedBox(width: 4),
+            const Text(
+              'Back',
+              style: TextStyles.s16w400cblue,
+            )
+          ],
+        ),
+        const SizedBox(height: 16),
+        Text(
+          text,
+          style: TextStyles.header1s32,
+        ),
+        const SizedBox(height: 28.0),
+        Column(
+          children: List.generate(
+            answers.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: MyAnswerContainer(
+                text: answers[index],
+                onTap: onTap,
               ),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }

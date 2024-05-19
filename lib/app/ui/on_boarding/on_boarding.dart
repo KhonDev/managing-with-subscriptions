@@ -19,56 +19,46 @@ class _OnBoardingState extends State<OnBoarding> {
   List onboard = [
     Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 76.0, 16.0, 0),
-          child: onBoard(
-            image: const AssetImage(
-              'assets/images/music.png',
-            ),
-            text: const Text('Make Your Service\nManagement\nEasier',
-                style: TextStyles.header1s32),
-            text2: 'Be aware of your spending on services and\nsubscriptions',
+        onBoard(
+          image: const AssetImage(
+            'assets/images/music.png',
           ),
+          text: const Text('Make Your Service\nManagement\nEasier',
+              style: TextStyles.header1s32),
+          text2: 'Be aware of your spending on services and\nsubscriptions',
         ),
       ],
     ),
     Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 76.0, 16.0, 0),
-          child: onBoard(
-            image: const AssetImage('assets/images/cinema.png'),
-            text: const Text('Don\'t let your money\ngo to no one knows\nwhere',
-                style: TextStyles.header1s32),
-            text2:
-                'Calculate your spending on services and\nsubscriptions months in advance',
-          ),
+        onBoard(
+          image: const AssetImage('assets/images/cinema.png'),
+          text: const Text('Don\'t let your money\ngo to no one knows\nwhere',
+              style: TextStyles.header1s32),
+          text2:
+              'Calculate your spending on services and\nsubscriptions months in advance',
         ),
       ],
     ),
     Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 76.0, 16.0, 0),
-          child: onBoard(
-            image: const AssetImage('assets/images/game.png'),
-            text: const Text('Don\'t miss payments\nand keep your\nrecords',
-                style: TextStyles.header1s32),
-            text2:
-                'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
-          ),
+        onBoard(
+          image: const AssetImage('assets/images/game.png'),
+          text: const Text('Don\'t miss payments\nand keep your\nrecords',
+              style: TextStyles.header1s32),
+          text2:
+              'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
         ),
       ],
     ),
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 48, 16.0, 27),
-            child: Row(
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Row(
               children: [
                 Expanded(
                   child: Container(
@@ -93,21 +83,18 @@ class _OnBoardingState extends State<OnBoarding> {
                 ),
               ],
             ),
-          ),
-          PageView(
-            controller: controller,
-            onPageChanged: (index) {
-              onLastPage = index;
-              setState(() {});
-            },
-            children: List.generate(
-              3,
-              (index) => onboard[index],
+            PageView(
+              controller: controller,
+              onPageChanged: (index) {
+                onLastPage = index;
+                setState(() {});
+              },
+              children: List.generate(
+                3,
+                (index) => onboard[index],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 40.0),
-            child: Container(
+            Container(
               alignment: const Alignment(0, 1),
               child: onLastPage == 2
                   ? NextButton(
@@ -127,8 +114,8 @@ class _OnBoardingState extends State<OnBoarding> {
                       child: const Text('Next', style: TextStyles.s16w600cblue),
                     ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -151,22 +138,19 @@ class NextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: padding ?? const EdgeInsets.symmetric(horizontal: 16.0),
-      child: SizedBox(
-          width: double.infinity,
-          height: 49,
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                foregroundColor: foregroundColor ?? AppColors.deepBlue,
-                backgroundColor: color ?? AppColors.blue100,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
+    return SizedBox(
+        width: double.infinity,
+        height: 49,
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: foregroundColor ?? AppColors.deepBlue,
+              backgroundColor: color ?? AppColors.blue100,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
               ),
-              onPressed: onTap,
-              child: child)),
-    );
+            ),
+            onPressed: onTap,
+            child: child));
   }
 }
 
