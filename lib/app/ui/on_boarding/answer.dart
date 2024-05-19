@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
+import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 
 // ignore: camel_case_types
 class AnswerQuesion extends StatefulWidget {
@@ -20,16 +22,9 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 56.0, 16.0, 0),
           child: AnswerTile(
-            image: const AssetImage(
-              'assets/images/image 1.png',
-            ),
             text: const Text(
               'What is your primary\ngoal for using this\nsubscription\nmanagement app?',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.header1s32,
             ),
             text2: 'Be aware of your spending on services and\nsubscriptions',
           ),
@@ -41,14 +36,9 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 56.0, 16.0, 0),
           child: AnswerTile(
-            image: const AssetImage('assets/images/image2.png'),
             text: const Text(
               'Don\'t let your money\ngo to no one knows\nwhere',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.header1s32,
             ),
             text2:
                 'Calculate your spending on services and\nsubscriptions months in advance',
@@ -61,14 +51,9 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 56.0, 16.0, 0),
           child: AnswerTile(
-            image: const AssetImage('assets/images/image.png'),
             text: const Text(
               'Don\'t miss payments\nand keep your\nrecords',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.header1s32,
             ),
             text2:
                 'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
@@ -81,14 +66,9 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 56.0, 16.0, 0),
           child: AnswerTile(
-            image: const AssetImage('assets/images/image.png'),
             text: const Text(
               'Don\'t miss payments\nand keep your\nrecords',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.header1s32,
             ),
             text2:
                 'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
@@ -101,14 +81,9 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 56.0, 16.0, 0),
           child: AnswerTile(
-            image: const AssetImage('assets/images/image.png'),
             text: const Text(
               'Don\'t miss payments\nand keep your\nrecords',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+              style: TextStyles.header1s32,
             ),
             text2:
                 'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
@@ -129,7 +104,7 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
               setState(() {});
             },
             children: List.generate(
-              3,
+              tile.length,
               (index) => tile[index],
             ),
           ),
@@ -142,7 +117,7 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                   Expanded(
                     child: Container(
                       height: 1.5,
-                      color: const Color.fromRGBO(31, 135, 210, 100),
+                      color: AppColors.deepBlue,
                       width: 40,
                     ),
                   ),
@@ -151,7 +126,7 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                       margin: const EdgeInsets.symmetric(horizontal: 4),
                       height: 1.5,
                       color: onLastPage >= 1
-                          ? const Color.fromRGBO(31, 135, 210, 100)
+                          ? AppColors.deepBlue
                           : const Color.fromRGBO(212, 237, 255, 100),
                       width: 40,
                     ),
@@ -159,8 +134,18 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                   Expanded(
                     child: Container(
                       height: 1.5,
-                      color: onLastPage == 2
-                          ? const Color.fromRGBO(31, 135, 210, 100)
+                      color: onLastPage >= 2
+                          ? AppColors.deepBlue
+                          : const Color.fromRGBO(212, 237, 255, 100),
+                      width: 40,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      height: 1.5,
+                      color: onLastPage >= 3
+                          ? AppColors.deepBlue
                           : const Color.fromRGBO(212, 237, 255, 100),
                       width: 40,
                     ),
@@ -168,17 +153,8 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                   Expanded(
                     child: Container(
                       height: 1.5,
-                      color: onLastPage == 2
-                          ? const Color.fromRGBO(31, 135, 210, 100)
-                          : const Color.fromRGBO(212, 237, 255, 100),
-                      width: 40,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 1.5,
-                      color: onLastPage == 2
-                          ? const Color.fromRGBO(31, 135, 210, 100)
+                      color: onLastPage == 4
+                          ? AppColors.deepBlue
                           : const Color.fromRGBO(212, 237, 255, 100),
                       width: 40,
                     ),
@@ -195,12 +171,10 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
 
 // ignore: must_be_immutable, camel_case_types
 class AnswerTile extends StatelessWidget {
-  AssetImage image;
   Widget text;
   String text2;
   AnswerTile({
     super.key,
-    required this.image,
     required this.text,
     required this.text2,
   });
@@ -215,18 +189,12 @@ class AnswerTile extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                Icons.arrow_back_ios_new_rounded,
-                color: Colors.blue,
-              ),
+              Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.deepBlue),
               SizedBox(width: 4),
               Text(
                 'Back',
                 style: TextStyle(
-                  height: 1.0,
-                  fontSize: 23,
-                  color: Colors.blue,
-                ),
+                    height: 1.0, fontSize: 23, color: AppColors.deepBlue),
               )
             ],
           ),
@@ -238,14 +206,11 @@ class AnswerTile extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color.fromRGBO(212, 237, 255, 100),
+            color: AppColors.blue100,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: const Text(
-            'To keep track of all my subscription\nexpenses',
-            style: TextStyle(
-                fontSize: 16.0, color: Color.fromRGBO(58, 58, 58, 100)),
-          ),
+          child: const Text('To keep track of all my subscription\nexpenses',
+              style: TextStyles.body2s16),
         )
       ],
     );
