@@ -34,11 +34,13 @@ class SettingsScreen extends StatelessWidget {
           svg: 'assets/vectors/star.svg',
           text: 'rote us',
         ),
+      
         Spacer(
           flex: 15,
         ),
         CustomDeleteButton(title: 'Delete'),
         Spacer(),
+        
       ],
     );
   }
