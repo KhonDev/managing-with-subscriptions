@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:managing_with_subscriptions/app/ui/screens/settings_screen.dart';
+import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SettingsScreen(),
+      body: AnswerQuesion(),
     );
   }
 }

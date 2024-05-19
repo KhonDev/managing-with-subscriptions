@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:managing_with_subscriptions/app/ui/on_board/on_boarding.dart';
+import 'package:go_router/go_router.dart';
+import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class SpalshScreen extends StatefulWidget {
   const SpalshScreen({super.key});
@@ -17,13 +17,7 @@ class _SpalshScreenState extends State<SpalshScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const OnBoarding(
-        
-          ),
-        ),
-      );
+     GoRouter.of(context).pushNamed(MyAppRouteConstants.onBoardingRouteName);
     });
   }
 
@@ -43,7 +37,7 @@ class _SpalshScreenState extends State<SpalshScreen>
           width: 215,
           height: 215,
           child: Image.asset(
-            'assets/images/logo.png',
+            'assets/images/stat.png',
             fit: BoxFit.cover,
           ),
         ),

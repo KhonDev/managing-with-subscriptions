@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:managing_with_subscriptions/app/ui/on_board/answer.dart';
+import 'package:go_router/go_router.dart';
+import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
+import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
+import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({
@@ -20,16 +23,10 @@ class _OnBoardingState extends State<OnBoarding> {
           padding: const EdgeInsets.fromLTRB(16.0, 76.0, 16.0, 0),
           child: onBoard(
             image: const AssetImage(
-              'assets/images/image 1.png',
+              'assets/images/music.png',
             ),
-            text: const Text(
-              'Make Your Service\nManagement\nEasier',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
-            ),
+            text: const Text('Make Your Service\nManagement\nEasier',
+                style: TextStyles.header1s32),
             text2: 'Be aware of your spending on services and\nsubscriptions',
           ),
         ),
@@ -40,15 +37,9 @@ class _OnBoardingState extends State<OnBoarding> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 76.0, 16.0, 0),
           child: onBoard(
-            image: const AssetImage('assets/images/image2.png'),
-            text: const Text(
-              'Don\'t let your money\ngo to no one knows\nwhere',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
-            ),
+            image: const AssetImage('assets/images/cinema.png'),
+            text: const Text('Don\'t let your money\ngo to no one knows\nwhere',
+                style: TextStyles.header1s32),
             text2:
                 'Calculate your spending on services and\nsubscriptions months in advance',
           ),
@@ -60,15 +51,9 @@ class _OnBoardingState extends State<OnBoarding> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 76.0, 16.0, 0),
           child: onBoard(
-            image: const AssetImage('assets/images/image.png'),
-            text: const Text(
-              'Don\'t miss payments\nand keep your\nrecords',
-              style: TextStyle(
-                  height: 0,
-                  color: Color.fromRGBO(30, 30, 30, 100),
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
-            ),
+            image: const AssetImage('assets/images/game.png'),
+            text: const Text('Don\'t miss payments\nand keep your\nrecords',
+                style: TextStyles.header1s32),
             text2:
                 'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
           ),
@@ -88,28 +73,23 @@ class _OnBoardingState extends State<OnBoarding> {
                 Expanded(
                   child: Container(
                     height: 1.5,
-                    color: const Color.fromRGBO(31, 135, 210, 100),
-                    width: 40,
+                    color: AppColors.deepBlue,
                   ),
                 ),
                 Expanded(
                   child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    height: 1.5,
-                    color: onLastPage >= 1
-                        ? const Color.fromRGBO(31, 135, 210, 100)
-                        : const Color.fromRGBO(212, 237, 255, 100),
-                    width: 40,
-                  ),
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      height: 1.5,
+                      color: onLastPage >= 1
+                          ? AppColors.deepBlue
+                          : AppColors.blue100),
                 ),
                 Expanded(
                   child: Container(
-                    height: 1.5,
-                    color: onLastPage == 2
-                        ? const Color.fromRGBO(31, 135, 210, 100)
-                        : const Color.fromRGBO(212, 237, 255, 100),
-                    width: 40,
-                  ),
+                      height: 1.5,
+                      color: onLastPage > 1
+                          ? AppColors.deepBlue
+                          : AppColors.blue100),
                 ),
               ],
             ),
@@ -131,7 +111,7 @@ class _OnBoardingState extends State<OnBoarding> {
               alignment: const Alignment(0, 1),
               child: onLastPage == 2
                   ? NextButton(
-                      color: const Color.fromRGBO(31, 135, 210, 100),
+                      color: AppColors.deepBlue,
                       child: const Text(
                         'Start',
                         style: TextStyle(
@@ -140,12 +120,10 @@ class _OnBoardingState extends State<OnBoarding> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const AnswerQuesion(),
-                        ),
-                      ),
+                      onTap: () {
+                        GoRouter.of(context).pushNamed(
+                            MyAppRouteConstants.answerQuestionRouteName);
+                      },
                     )
                   : NextButton(
                       onTap: () {
@@ -156,7 +134,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       child: const Text(
                         'Next',
                         style: TextStyle(
-                          color: Color.fromRGBO(31, 135, 210, 100),
+                          color: AppColors.deepBlue,
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -191,8 +169,7 @@ class NextButton extends StatelessWidget {
           height: 49,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    color ?? const Color.fromRGBO(212, 237, 255, 100),
+                backgroundColor: color ?? AppColors.blue100,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -220,7 +197,7 @@ class onBoard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(width: double.infinity, height: 120, child: text),
+        text,
         const SizedBox(height: 32.0),
         Container(
           height: 207,
@@ -234,13 +211,7 @@ class onBoard extends StatelessWidget {
         const SizedBox(height: 32.0),
         SizedBox(
           height: 46,
-          child: Text(
-            text2,
-            style: const TextStyle(
-              fontSize: 16.0,
-              color: Color.fromRGBO(56, 56, 56, 100),
-            ),
-          ),
+          child: Text(text2, style: TextStyles.body2s16),
         ),
       ],
     );

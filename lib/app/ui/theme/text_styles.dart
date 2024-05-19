@@ -54,7 +54,11 @@ abstract class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.black,
   );
-
+  static const s16w400cblue = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.deepBlue,
+  );
   // static const s39w400 = TextStyle(
   //   fontSize: 39.0,
   //   fontWeight: FontWeight.w400,
