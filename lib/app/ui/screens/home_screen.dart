@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/home.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
