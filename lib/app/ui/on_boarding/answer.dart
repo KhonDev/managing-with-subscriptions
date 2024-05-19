@@ -82,9 +82,9 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                           ? controller.nextPage(
                               duration: const Duration(milliseconds: 300),
                               curve: Curves.easeIn)
-                          : GoRouter.of(context).pushNamed(
-                              MyAppRouteConstants.progressing);
-                      ;
+                          : GoRouter.of(context)
+                              .pushNamed(MyAppRouteConstants.progressing);
+                              
                     },
                   ),
                 ],

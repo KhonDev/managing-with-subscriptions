@@ -4,5 +4,6 @@ class MyAppRouteConstants {
   static const String answerQuestionRouteName = 'answer_question';
   static const String homeScreenRouteName = 'home_screen';
   static const String errorRouteName = 'error';
-  static const String progressing = 'error';
+  static const String progressing = 'progressing';
+  static const String addservice = 'add_service';
 }

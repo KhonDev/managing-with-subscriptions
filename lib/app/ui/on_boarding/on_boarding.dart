@@ -112,14 +112,7 @@ class _OnBoardingState extends State<OnBoarding> {
               child: onLastPage == 2
                   ? NextButton(
                       color: AppColors.deepBlue,
-                      child: const Text(
-                        'Start',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      child: const Text('Start', style: TextStyles.p2s16W),
                       onTap: () {
                         GoRouter.of(context).pushNamed(
                             MyAppRouteConstants.answerQuestionRouteName);
@@ -131,14 +124,7 @@ class _OnBoardingState extends State<OnBoarding> {
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeIn);
                       },
-                      child: const Text(
-                        'Next',
-                        style: TextStyle(
-                          color: AppColors.deepBlue,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      child: const Text('Next', style: TextStyles.s16w600cblue),
                     ),
             ),
           ),
@@ -148,27 +134,31 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 }
 
-// ignore: must_be_immutable
 class NextButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
-  Color? color;
-  NextButton({
+  final Color? color;
+  final Color? foregroundColor;
+  final EdgeInsets? padding;
+  const NextButton({
     super.key,
     required this.child,
     this.color,
+    this.padding,
+    this.foregroundColor,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: padding ?? const EdgeInsets.symmetric(horizontal: 16.0),
       child: SizedBox(
           width: double.infinity,
           height: 49,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                foregroundColor: foregroundColor ?? AppColors.deepBlue,
                 backgroundColor: color ?? AppColors.blue100,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

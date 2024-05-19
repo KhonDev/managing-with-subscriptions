@@ -4,6 +4,7 @@ import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/on_boarding.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/proggressing.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/splash_screen.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/add_service.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/error_page.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home_screen.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
@@ -53,6 +54,15 @@ class NyAppRouter {
         pageBuilder: (context, state) {
           return const MaterialPage(
             child: Progressing(),
+          );
+        },
+      ),
+        GoRoute(
+        name: MyAppRouteConstants.addservice,
+        path: '/add_service',
+        pageBuilder: (context, state) {
+          return const MaterialPage(
+            child: AddService(),
           );
         },
       ),

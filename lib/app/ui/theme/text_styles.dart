@@ -29,6 +29,11 @@ abstract class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.white,
   );
+  static const s12w400white = TextStyle(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
   static const p2s16R = TextStyle(
     fontSize: 16.0,
     fontWeight: FontWeight.w600,
@@ -58,6 +63,36 @@ abstract class TextStyles {
     fontSize: 16.0,
     fontWeight: FontWeight.w400,
     color: AppColors.deepBlue,
+  );
+  static const s16w600cblue = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.deepBlue,
+  );
+  static const s12w400grey = TextStyle(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
+  );
+  static const s18w500cblue = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.deepBlue,
+  );
+  static const s12w500cblue = TextStyle(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.deepBlue,
+  );
+  static const s44w600cblack = TextStyle(
+    fontSize: 44.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+    static const s14w400grey = TextStyle(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
   );
   // static const s39w400 = TextStyle(
   //   fontSize: 39.0,
