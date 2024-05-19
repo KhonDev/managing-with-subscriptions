@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/theme.dart';
+import 'package:managing_with_subscriptions/app/ui/widgets/back.dart';
+import 'package:managing_with_subscriptions/app/ui/widgets/mytextfield.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
 
 class AddService extends StatefulWidget {
@@ -136,52 +138,6 @@ class _AddServiceState extends State<AddService> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class MyTextField extends StatelessWidget {
-  final String title;
-  final String? hint;
-  final TextEditingController controller;
-  const MyTextField({
-    super.key,
-    required this.title,
-    this.hint,
-    required this.controller,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: TextStyles.footnote2s12Reg,
-        ),
-        const SizedBox(height: 8.0),
-        TextField(
-          controller: controller,
-          cursorColor: AppColors.deepBlue,
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.all(12),
-            hintStyle: TextStyles.s14w400grey,
-            isDense: true,
-            hintText: hint ?? '',
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            filled: true,
-            fillColor: AppColors.whiteF8,
-          ),
-        ),
-      ],
     );
   }
 }

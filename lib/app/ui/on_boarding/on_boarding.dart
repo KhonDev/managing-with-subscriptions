@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
+import 'package:managing_with_subscriptions/app/ui/widgets/on_board.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -18,34 +19,34 @@ class _OnBoardingState extends State<OnBoarding> {
   PageController controller = PageController();
   int onLastPage = 0;
   List onboard = [
-    Column(
+    const Column(
       children: [
         onBoard(
-          image: const AssetImage(
+          image: AssetImage(
             'assets/images/music.png',
           ),
-          text: const Text('Make Your Service\nManagement\nEasier',
+          text: Text('Make Your Service\nManagement\nEasier',
               style: TextStyles.header1s32),
           text2: 'Be aware of your spending on services and\nsubscriptions',
         ),
       ],
     ),
-    Column(
+    const Column(
       children: [
         onBoard(
-          image: const AssetImage('assets/images/cinema.png'),
-          text: const Text('Don\'t let your money\ngo to no one knows\nwhere',
+          image: AssetImage('assets/images/cinema.png'),
+          text: Text('Don\'t let your money\ngo to no one knows\nwhere',
               style: TextStyles.header1s32),
           text2:
               'Calculate your spending on services and\nsubscriptions months in advance',
         ),
       ],
     ),
-    Column(
+    const Column(
       children: [
         onBoard(
-          image: const AssetImage('assets/images/game.png'),
-          text: const Text('Don\'t miss payments\nand keep your\nrecords',
+          image: AssetImage('assets/images/game.png'),
+          text: Text('Don\'t miss payments\nand keep your\nrecords',
               style: TextStyles.header1s32),
           text2:
               'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
@@ -122,76 +123,3 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 }
 
-class NextButton extends StatelessWidget {
-  final Widget child;
-  final VoidCallback onTap;
-  final Color? color;
-  final Color? foregroundColor;
-  final EdgeInsets? padding;
-  const NextButton({
-    super.key,
-    required this.child,
-    this.color,
-    this.padding,
-    this.foregroundColor,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: padding ?? const EdgeInsets.symmetric(horizontal: 16.0),
-      child: SizedBox(
-          width: double.infinity,
-          height: 49,
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                foregroundColor: foregroundColor ?? AppColors.deepBlue,
-                backgroundColor: color ?? AppColors.blue100,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              onPressed: onTap,
-              child: child)),
-    );
-  }
-}
-
-// ignore: must_be_immutable, camel_case_types
-class onBoard extends StatelessWidget {
-  AssetImage image;
-  Widget text;
-  String text2;
-  onBoard({
-    super.key,
-    required this.image,
-    required this.text,
-    required this.text2,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        text,
-        const SizedBox(height: 32.0),
-        Container(
-          height: 207,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            image: DecorationImage(image: image, fit: BoxFit.cover),
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-        const SizedBox(height: 32.0),
-        SizedBox(
-          height: 46,
-          child: Text(text2, style: TextStyles.body2s16),
-        ),
-      ],
-    );
-  }
-}
