@@ -183,17 +183,7 @@ class AnswerTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 56.0),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SvgPicture.asset('assets/vectors/backblue.svg'),
-              const SizedBox(width: 4),
-              const Text(
-                'Back',
-                style: TextStyles.s16w400cblue,
-              )
-            ],
-          ),
+          const BackWidget(),
           const SizedBox(height: 16),
           Text(
             text,
@@ -214,6 +204,27 @@ class AnswerTile extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class BackWidget extends StatelessWidget {
+  const BackWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SvgPicture.asset('assets/vectors/backblue.svg'),
+        const SizedBox(width: 4),
+        const Text(
+          'Back',
+          style: TextStyles.s16w400cblue,
+        )
+      ],
     );
   }
 }

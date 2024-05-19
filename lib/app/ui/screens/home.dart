@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/on_boarding.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
+import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class Home extends StatefulWidget {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/on_boarding.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
+import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
 
 class Progressing extends StatefulWidget {
   const Progressing({super.key});
@@ -31,16 +32,19 @@ class _ProgressingState extends State<Progressing> {
                   setState(() {});
                 },
                 child: Container(
-                  padding: const EdgeInsets.all(11.0),
                   width: 70,
                   height: 70,
                   decoration: BoxDecoration(
                     color: AppColors.blue100,
                     borderRadius: BorderRadius.circular(70),
                   ),
-                  child: MyCircularIndicator(
-                    value: valueall,
-                    width: 3,
+                  child: SizedBox(
+                    width: 32,
+                    height: 32,
+                    child: MyCircularIndicator(
+                      value: valueall,
+                      width: 3,
+                    ),
                   ),
                 ),
               ),
