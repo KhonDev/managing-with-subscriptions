@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SettingsScreen(),
+    );
   }
 }

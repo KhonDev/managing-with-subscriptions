@@ -24,6 +24,16 @@ abstract class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.black,
   );
+  static const p2s16W = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+  static const p2s16R = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.red,
+  );
   static const body1s14 = TextStyle(
     fontSize: 14.0,
     fontWeight: FontWeight.w400,
