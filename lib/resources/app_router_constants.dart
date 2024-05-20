@@ -7,5 +7,7 @@ class MyAppRouteConstants {
   static const String progressing = 'progressing';
   static const String addservice = 'add_service';
   static const String homepage = 'homepage';
-  static const String addsevcies = 'add_sevcies';
+  static const String addnotification= 'add_notification';
+  static const String selectsevicees = 'select_sevicees';
+
 }

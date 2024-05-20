@@ -17,6 +17,7 @@ class onBoard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 27.0),
         text,
         const SizedBox(height: 32.0),
         Container(

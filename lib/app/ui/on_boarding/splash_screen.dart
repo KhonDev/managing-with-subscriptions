@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
+
+final mybox = Hive.box('mybox');
 
 class SpalshScreen extends StatefulWidget {
   const SpalshScreen({super.key});
@@ -17,7 +20,13 @@ class _SpalshScreenState extends State<SpalshScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 2), () {
-     GoRouter.of(context).pushNamed(MyAppRouteConstants.onBoardingRouteName);
+      if (mybox.get(1) != null) {
+        GoRouter.of(context).pushNamed(MyAppRouteConstants.homeScreenRouteName);
+      }
+      {
+        GoRouter.of(context).pushNamed(MyAppRouteConstants.onBoardingRouteName);
+      }
+      ;
     });
   }
 

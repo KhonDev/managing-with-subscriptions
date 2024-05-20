@@ -19,46 +19,35 @@ class _OnBoardingState extends State<OnBoarding> {
   PageController controller = PageController();
   int onLastPage = 0;
   List onboard = [
-    const Column(
-      children: [
-        onBoard(
-          image: AssetImage(
-            'assets/images/music.png',
-          ),
-          text: Text('Make Your Service\nManagement\nEasier',
-              style: TextStyles.header1s32),
-          text2: 'Be aware of your spending on services and\nsubscriptions',
-        ),
-      ],
+    const onBoard(
+      image: AssetImage(
+        'assets/images/music.png',
+      ),
+      text: Text('Make Your Service\nManagement\nEasier',
+          style: TextStyles.header1s32),
+      text2: 'Be aware of your spending on services and\nsubscriptions',
     ),
-    const Column(
-      children: [
-        onBoard(
-          image: AssetImage('assets/images/cinema.png'),
-          text: Text('Don\'t let your money\ngo to no one knows\nwhere',
-              style: TextStyles.header1s32),
-          text2:
-              'Calculate your spending on services and\nsubscriptions months in advance',
-        ),
-      ],
+    const onBoard(
+      image: AssetImage('assets/images/cinema.png'),
+      text: Text('Don\'t let your money\ngo to no one knows\nwhere',
+          style: TextStyles.header1s32),
+      text2:
+          'Calculate your spending on services and\nsubscriptions months in advance',
     ),
-    const Column(
-      children: [
-        onBoard(
-          image: AssetImage('assets/images/game.png'),
-          text: Text('Don\'t miss payments\nand keep your\nrecords',
-              style: TextStyles.header1s32),
-          text2:
-              'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
-        ),
-      ],
+    const onBoard(
+      image: AssetImage('assets/images/game.png'),
+      text: Text('Don\'t miss payments\nand keep your\nrecords',
+          style: TextStyles.header1s32),
+      text2:
+          'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
     ),
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16,top: 48,bottom: 40),
+        child: Stack(
           children: [
             Row(
               children: [
@@ -100,6 +89,7 @@ class _OnBoardingState extends State<OnBoarding> {
               alignment: const Alignment(0, 1),
               child: onLastPage == 2
                   ? NextButton(
+                    padding: EdgeInsets.zero,
                       color: AppColors.deepBlue,
                       child: const Text('Start', style: TextStyles.p2s16W),
                       onTap: () {
@@ -108,6 +98,8 @@ class _OnBoardingState extends State<OnBoarding> {
                       },
                     )
                   : NextButton(
+                    padding: EdgeInsets.zero,
+
                       onTap: () {
                         controller.nextPage(
                             duration: const Duration(milliseconds: 300),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:managing_with_subscriptions/app/ui/on_boarding/splash_screen.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/answertile.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
@@ -71,75 +72,88 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
               (index) => Column(
                 children: [
                   AnswerTile(
+                    index: onLastPage,
                     text: answers[index],
                     questionfourths: thefirst[index],
                     questionfirst: second[index],
                     questionthrees: thethreed[index],
                     questionsecond: thefourths[index],
                     onTap: () {
-                      onLastPage != 4
-                          ? controller.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn)
-                          : GoRouter.of(context)
-                              .pushNamed(MyAppRouteConstants.progressing);
-                              
+                      if (onLastPage != 4) {
+                        controller.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeIn);
+                      } else {
+                        mybox.put(1, [0]);
+                        GoRouter.of(context)
+                            .pushNamed(MyAppRouteConstants.progressing);
+                      }
+
+                    },
+                    back: () {
+                      controller.previousPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn);
                     },
                   ),
                 ],
               ),
             ),
           ),
-          Align(
-            alignment: const Alignment(0.0, 1.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: 1.5,
-                    color: AppColors.deepBlue,
-                    width: 40,
+          Padding(
+            padding:
+                const EdgeInsets.only(bottom: 56.0, right: 16.0, left: 16.0),
+            child: Align(
+              alignment: const Alignment(0.0, 1),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 1.5,
+                      color: AppColors.deepBlue,
+                      width: 40,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    height: 1.5,
-                    color: onLastPage >= 1
-                        ? AppColors.deepBlue
-                        : const Color.fromRGBO(212, 237, 255, 100),
-                    width: 40,
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      height: 1.5,
+                      color: onLastPage >= 1
+                          ? AppColors.deepBlue
+                          : const Color.fromRGBO(212, 237, 255, 100),
+                      width: 40,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 1.5,
-                    color: onLastPage >= 2
-                        ? AppColors.deepBlue
-                        : const Color.fromRGBO(212, 237, 255, 100),
-                    width: 40,
+                  Expanded(
+                    child: Container(
+                      height: 1.5,
+                      color: onLastPage >= 2
+                          ? AppColors.deepBlue
+                          : const Color.fromRGBO(212, 237, 255, 100),
+                      width: 40,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    height: 1.5,
-                    color: onLastPage >= 3
-                        ? AppColors.deepBlue
-                        : const Color.fromRGBO(212, 237, 255, 100),
-                    width: 40,
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      height: 1.5,
+                      color: onLastPage >= 3
+                          ? AppColors.deepBlue
+                          : const Color.fromRGBO(212, 237, 255, 100),
+                      width: 40,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 1.5,
-                    color: onLastPage == 4
-                        ? AppColors.deepBlue
-                        : const Color.fromRGBO(212, 237, 255, 100),
-                    width: 40,
+                  Expanded(
+                    child: Container(
+                      height: 1.5,
+                      color: onLastPage == 4
+                          ? AppColors.deepBlue
+                          : const Color.fromRGBO(212, 237, 255, 100),
+                      width: 40,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
@@ -147,6 +161,3 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
     );
   }
 }
-
-
-

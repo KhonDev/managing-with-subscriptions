@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
+
 import 'package:managing_with_subscriptions/app/ui/screens/calendar.dart';
-import 'package:managing_with_subscriptions/app/ui/screens/home.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/notifications.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/select_services.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/settings_screen.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,10 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedindex = 0;
 
   List screens = [
-    const Home(),
+    const SelectSevicees(),
     const CalendarScreen(),
     const NotificationsScreen(),
-    const Home(),
+    const SettingsScreen(),
   ];
   List icons = [
     SvgPicture.asset('assets/vectors/Home 3.svg'),
@@ -43,7 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[selectedindex],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: screens[selectedindex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.blue,
         selectedLabelStyle: TextStyles.s12w500cblue,

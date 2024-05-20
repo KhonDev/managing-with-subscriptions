@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
+import 'package:managing_with_subscriptions/app/ui/widgets/back.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/myanswer.dart';
 
 class AnswerTile extends StatelessWidget {
+  final int? index;
   final String text;
   final String questionfirst;
   final String questionsecond;
   final String questionthrees;
   final String questionfourths;
   final VoidCallback onTap;
+  final VoidCallback back;
   const AnswerTile({
     super.key,
     required this.text,
@@ -18,6 +21,8 @@ class AnswerTile extends StatelessWidget {
     required this.questionthrees,
     required this.questionsecond,
     required this.onTap,
+    required this.back,
+    this.index,
   });
 
   @override
@@ -34,17 +39,10 @@ class AnswerTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 56.0),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SvgPicture.asset('assets/vectors/backblue.svg'),
-              const SizedBox(width: 4),
-              const Text(
-                'Back',
-                style: TextStyles.s16w400cblue,
-              )
-            ],
-          ),
+          if (index != 0)
+            GestureDetector(onTap: back, child: const BackWidget())
+          else
+            const SizedBox(),
           const SizedBox(height: 16),
           Text(
             text,
@@ -68,4 +66,3 @@ class AnswerTile extends StatelessWidget {
     );
   }
 }
-

@@ -4,30 +4,32 @@ import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/on_boarding.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/proggressing.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/splash_screen.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/add_notification.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/add_service.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/error_page.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home_screen.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/select_services.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class NyAppRouter {
   GoRouter router = GoRouter(
     routes: [
       GoRoute(
-        name: MyAppRouteConstants.homeScreenRouteName,
+        name: MyAppRouteConstants.splashRouteName,
         path: '/',
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: HomeScreen(),
+            child: SpalshScreen(),
           );
         },
       ),
       GoRoute(
-        name: MyAppRouteConstants.splashRouteName,
-        path: '/splash',
+        name: MyAppRouteConstants.homeScreenRouteName,
+        path: '/homescreen',
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: SpalshScreen(),
+            child: HomeScreen(),
           );
         },
       ),
@@ -73,6 +75,24 @@ class NyAppRouter {
         pageBuilder: (context, state) {
           return const MaterialPage(
             child: AddService(),
+          );
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.addnotification,
+        path: '/add_notification',
+        pageBuilder: (context, state) {
+          return const MaterialPage(
+            child: AddNotification(),
+          );
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.selectsevicees,
+        path: '/select_sevicees',
+        pageBuilder: (context, state) {
+          return const MaterialPage(
+            child: SelectSevicees(),
           );
         },
       ),
