@@ -40,7 +40,11 @@ class AnswerTile extends StatelessWidget {
         children: [
           const SizedBox(height: 56.0),
           if (index != 0)
-            GestureDetector(onTap: back, child: const BackWidget())
+            GestureDetector(
+                onTap: back,
+                child: BackWidget(
+                  pop: true,
+                ))
           else
             const SizedBox(),
           const SizedBox(height: 16),

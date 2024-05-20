@@ -17,14 +17,14 @@ class _CustomListTileState extends State<CustomListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.whiteF8,
         borderRadius: BorderRadius.all(
           Radius.circular(8),
         ),
       ),
       child: ListTile(
-        title: Text(
+        title: const Text(
           'Notifactions',
           style: TextStyles.p2s16,
         ),

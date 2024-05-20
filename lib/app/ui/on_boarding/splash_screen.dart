@@ -20,13 +20,9 @@ class _SpalshScreenState extends State<SpalshScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 2), () {
-      if (mybox.get(1) != null) {
-        GoRouter.of(context).pushNamed(MyAppRouteConstants.homeScreenRouteName);
-      }
-      {
-        GoRouter.of(context).pushNamed(MyAppRouteConstants.onBoardingRouteName);
-      }
-      ;
+      GoRouter.of(context).pushNamed(mybox.get(0) != null
+          ? MyAppRouteConstants.onBoardingRouteName
+          : MyAppRouteConstants.homeScreenRouteName);
     });
   }
 

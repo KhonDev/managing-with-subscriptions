@@ -13,6 +13,7 @@ class MyCircularIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircularProgressIndicator(
+      
       strokeWidth: width ?? 2,
       value: value,
       color: AppColors.deepBlue,

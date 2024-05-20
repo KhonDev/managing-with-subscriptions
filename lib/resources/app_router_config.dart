@@ -10,6 +10,8 @@ import 'package:managing_with_subscriptions/app/ui/screens/error_page.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home_screen.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/select_services.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/settings_screen.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/supportscreen.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class NyAppRouter {
@@ -91,8 +93,30 @@ class NyAppRouter {
         name: MyAppRouteConstants.selectsevicees,
         path: '/select_sevicees',
         pageBuilder: (context, state) {
+          return MaterialPage(
+            child: SelectSeviceesScreen(
+         
+            ),
+          );
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.support,
+        path: '/support/:send',
+        pageBuilder: (context, state) {
+          return MaterialPage(
+            child: SupportScreen(
+              send: state.pathParameters['send'],
+            ),
+          );
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.settings,
+        path: '/settings',
+        pageBuilder: (context, state) {
           return const MaterialPage(
-            child: SelectSevicees(),
+            child: SettingsScreen()
           );
         },
       ),

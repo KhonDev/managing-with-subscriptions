@@ -74,19 +74,20 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                   AnswerTile(
                     index: onLastPage,
                     text: answers[index],
-                    questionfourths: thefirst[index],
-                    questionfirst: second[index],
+                    questionfourths: thefourths[index],
+                    questionfirst: thefirst[index],
                     questionthrees: thethreed[index],
-                    questionsecond: thefourths[index],
+                    questionsecond: second[index],
                     onTap: () {
                       if (onLastPage != 4) {
                         controller.nextPage(
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeIn);
                       } else {
-                        mybox.put(1, [0]);
+                        mybox.put(0, [0,'user'],);
                         GoRouter.of(context)
                             .pushNamed(MyAppRouteConstants.progressing);
+                            print(mybox.get(0),);
                       }
 
                     },

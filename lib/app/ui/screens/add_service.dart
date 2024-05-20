@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:managing_with_subscriptions/app/ui/on_boarding/answer.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/theme.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/back.dart';
@@ -13,13 +15,15 @@ class AddService extends StatefulWidget {
 }
 
 class _AddServiceState extends State<AddService> {
+  bool check = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
         children: [
           const SizedBox(height: 56),
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               BackWidget(),
@@ -105,14 +109,31 @@ class _AddServiceState extends State<AddService> {
                 padding: const EdgeInsets.all(12.0),
                 child: Row(
                   children: [
-                    Container(
-                      width: 24,
-                      height: 24,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: AppColors.grey),
+                    GestureDetector(
+                      onTap: () {
+                        check = !check;
+                        setState(() {});
+                      },
+                      child: Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: check != true
+                              ? AppColors.white
+                              : AppColors.deepBlue,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: AppColors.grey),
+                        ),
+                        child: check != true
+                            ? SizedBox()
+                            : Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: SvgPicture.asset(
+                                  'assets/vectors/smallgalochka.svg',
+                                  color: AppColors.white,
+                                ),
+                            ),
                       ),
-                      child: const SizedBox(),
                     ),
                     const SizedBox(width: 12.0),
                     const Text(

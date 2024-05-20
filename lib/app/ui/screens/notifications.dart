@@ -30,7 +30,7 @@ class NotificationsScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       SvgPicture.asset(
-                        'assets/vectors/Vector.svg',
+                        'assets/vectors/add.svg',
                         color: AppColors.deepBlue,
                       ),
                       const SizedBox(width: 4),

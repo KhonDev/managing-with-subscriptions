@@ -9,5 +9,7 @@ class MyAppRouteConstants {
   static const String homepage = 'homepage';
   static const String addnotification= 'add_notification';
   static const String selectsevicees = 'select_sevicees';
+  static const String support = 'support';
+  static const String settings = 'settings';
 
 }
