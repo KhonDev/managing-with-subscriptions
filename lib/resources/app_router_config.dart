@@ -6,6 +6,7 @@ import 'package:managing_with_subscriptions/app/ui/on_boarding/proggressing.dart
 import 'package:managing_with_subscriptions/app/ui/on_boarding/splash_screen.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/add_service.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/error_page.dart';
+import 'package:managing_with_subscriptions/app/ui/screens/home.dart';
 import 'package:managing_with_subscriptions/app/ui/screens/home_screen.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
@@ -48,18 +49,27 @@ class NyAppRouter {
           );
         },
       ),
-       GoRoute(
+      GoRoute(
         name: MyAppRouteConstants.progressing,
-        path: '/progress',
+        path: '/progressing',
         pageBuilder: (context, state) {
           return const MaterialPage(
             child: Progressing(),
           );
         },
       ),
-        GoRoute(
+      GoRoute(
+        name: MyAppRouteConstants.homepage,
+        path: '/homepage',
+        pageBuilder: (context, state) {
+          return const MaterialPage(
+            child: Home(),
+          );
+        },
+      ),
+      GoRoute(
         name: MyAppRouteConstants.addservice,
-        path: '/add_service',
+        path: '/add_services',
         pageBuilder: (context, state) {
           return const MaterialPage(
             child: AddService(),

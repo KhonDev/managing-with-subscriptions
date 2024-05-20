@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/circularindicator.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/loadingtile.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
+import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 class Progressing extends StatefulWidget {
   const Progressing({super.key});
@@ -17,7 +19,7 @@ class _ProgressingState extends State<Progressing> {
   double valuefirst = 0;
   double valuesecond = 0;
   double valuethress = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +97,10 @@ class _ProgressingState extends State<Progressing> {
                         'Continue',
                         style: TextStyles.p2s16W,
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        GoRouter.of(context).pushNamed(
+                            MyAppRouteConstants.homeScreenRouteName);
+                      },
                     )
                   : const SizedBox(
                       height: 49,
@@ -108,4 +113,3 @@ class _ProgressingState extends State<Progressing> {
     );
   }
 }
-

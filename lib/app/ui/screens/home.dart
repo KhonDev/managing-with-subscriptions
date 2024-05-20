@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:managing_with_subscriptions/app/ui/on_boarding/on_boarding.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
@@ -58,150 +57,153 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(
               width: double.infinity,
-              child: Column(
-                children: [
-                  const Row(
-                    children: [
-                      Expanded(
-                        child: TabsContainer(
-                          text: 'Active',
-                          color: AppColors.blue100,
-                        ),
-                      ),
-                      SizedBox(width: 4),
-                      Expanded(
-                        child: TabsContainer(
-                          text: 'Inactive',
-                          color: AppColors.whiteF3,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 30),
-                  Column(
-                    children: [
-                      const ServicerTile(
-                        images: 'assets/images/spoty.png',
-                        following: Row(
-                          children: [
-                            Text(
-                              '\$5 monthly',
-                              style: TextStyles.s12w400grey,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 4.0),
-                              child: CircleAvatar(
-                                radius: 2,
-                                backgroundColor: AppColors.grey,
-                              ),
-                            ),
-                            Text(
-                              'Family+ plan',
-                              style: TextStyles.s12w400grey,
-                            ),
-                          ],
-                        ),
-                        day: Row(
-                          children: [
-                            Text(
-                              '04/04/24',
-                              style: TextStyles.s12w400grey,
-                            ),
-                            SizedBox(width: 4),
-                            Text(
-                              '—',
-                              style: TextStyles.s12w400grey,
-                            ),
-                            SizedBox(width: 4),
-                            Text(
-                              '04/04/25',
-                              style: TextStyles.s12w400grey,
-                            ),
-                          ],
-                        ),
-                        name: 'Spotify',
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        height: 70,
-                        decoration: const BoxDecoration(
-                          color: AppColors.whiteF8,
-                          borderRadius: BorderRadius.vertical(
-                            bottom: Radius.circular(12),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    const Row(
+                      children: [
+                        Expanded(
+                          child: TabsContainer(
+                            text: 'Active',
+                            color: AppColors.blue100,
                           ),
                         ),
-                        child: const Text(
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.',
-                          style: TextStyles.s14w400grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Column(
-                    children: [
-                      const ServicerTile(
-                        images: 'assets/images/pc.png',
-                        following: Row(
-                          children: [
-                            Text(
-                              '\$5 monthly',
-                              style: TextStyles.s12w400grey,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 4.0),
-                              child: CircleAvatar(
-                                radius: 2,
-                                backgroundColor: AppColors.grey,
-                              ),
-                            ),
-                            Text(
-                              'Family+ plan',
-                              style: TextStyles.s12w400grey,
-                            ),
-                          ],
-                        ),
-                        day: Row(
-                          children: [
-                            Text(
-                              '04/04/24',
-                              style: TextStyles.s12w400grey,
-                            ),
-                            SizedBox(width: 4),
-                            Text(
-                              '—',
-                              style: TextStyles.s12w400grey,
-                            ),
-                            SizedBox(width: 4),
-                            Text(
-                              '04/04/25',
-                              style: TextStyles.s12w400grey,
-                            ),
-                          ],
-                        ),
-                        name: 'XBOX',
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        height: 70,
-                        decoration: const BoxDecoration(
-                          color: AppColors.whiteF8,
-                          borderRadius: BorderRadius.vertical(
-                            bottom: Radius.circular(12),
+                        SizedBox(width: 4),
+                        Expanded(
+                          child: TabsContainer(
+                            text: 'Inactive',
+                            color: AppColors.whiteF3,
                           ),
                         ),
-                        child: const Text(
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.',
-                          style: TextStyles.s14w400grey,
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                    Column(
+                      children: [
+                        const ServicerTile(
+                          images: 'assets/images/spoty.png',
+                          following: Row(
+                            children: [
+                              Text(
+                                '\$5 monthly',
+                                style: TextStyles.s12w400grey,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                child: CircleAvatar(
+                                  radius: 2,
+                                  backgroundColor: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                'Family+ plan',
+                                style: TextStyles.s12w400grey,
+                              ),
+                            ],
+                          ),
+                          day: Row(
+                            children: [
+                              Text(
+                                '04/04/24',
+                                style: TextStyles.s12w400grey,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                '—',
+                                style: TextStyles.s12w400grey,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                '04/04/25',
+                                style: TextStyles.s12w400grey,
+                              ),
+                            ],
+                          ),
+                          name: 'Spotify',
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          height: 70,
+                          decoration: const BoxDecoration(
+                            color: AppColors.whiteF8,
+                            borderRadius: BorderRadius.vertical(
+                              bottom: Radius.circular(12),
+                            ),
+                          ),
+                          child: const Text(
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.',
+                            style: TextStyles.s14w400grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Column(
+                      children: [
+                        const ServicerTile(
+                          images: 'assets/images/pc.png',
+                          following: Row(
+                            children: [
+                              Text(
+                                '\$5 monthly',
+                                style: TextStyles.s12w400grey,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                child: CircleAvatar(
+                                  radius: 2,
+                                  backgroundColor: AppColors.grey,
+                                ),
+                              ),
+                              Text(
+                                'Family+ plan',
+                                style: TextStyles.s12w400grey,
+                              ),
+                            ],
+                          ),
+                          day: Row(
+                            children: [
+                              Text(
+                                '04/04/24',
+                                style: TextStyles.s12w400grey,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                '—',
+                                style: TextStyles.s12w400grey,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                '04/04/25',
+                                style: TextStyles.s12w400grey,
+                              ),
+                            ],
+                          ),
+                          name: 'XBOX',
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          height: 70,
+                          decoration: const BoxDecoration(
+                            color: AppColors.whiteF8,
+                            borderRadius: BorderRadius.vertical(
+                              bottom: Radius.circular(12),
+                            ),
+                          ),
+                          child: const Text(
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            'Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.',
+                            style: TextStyles.s14w400grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             )
           ],
