@@ -19,29 +19,29 @@ class Progressing extends StatefulWidget {
 }
 
 class _ProgressingState extends State<Progressing> {
-  double valueall = 0;
-  double valuefirst = 0;
-  double valuesecond = 0;
-  double valuethress = 0;
+  double allValue = 0;
+  double firstValue = 0;
+  double secondValue = 0;
+  double threeValue = 0;
   void progress() {
     Timer(const Duration(seconds: 1), () {
-      valuefirst = 1;
+      firstValue = 1;
       setState(() {});
-      valueall = 0.3;
+      allValue = 0.3;
     });
     Timer(const Duration(seconds: 1), () {
-      valuesecond = 1;
+      secondValue = 1;
       setState(() {});
 
-      valueall = 0.7;
+      allValue = 0.7;
     });
     Timer(const Duration(seconds: 1), () {
-      valuefirst = 1;
-      valuesecond = 1;
-      valuethress = 1;
+      firstValue = 1;
+      secondValue = 1;
+      threeValue = 1;
       setState(() {});
 
-      valueall = 1;
+      allValue = 1;
     });
   }
 
@@ -70,7 +70,7 @@ class _ProgressingState extends State<Progressing> {
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
                   child: MyCircularIndicator(
-                    value: valueall,
+                    value: allValue,
                     width: 3,
                   ),
                 ),
@@ -99,21 +99,21 @@ class _ProgressingState extends State<Progressing> {
               const Spacer(),
               LoadingTile(
                 text: 'Personalizing your dashboard',
-                value: valuefirst,
+                value: firstValue,
               ),
               const SizedBox(height: 8),
               LoadingTile(
                 text: 'Optimizing notifications',
-                value: valuesecond,
+                value: secondValue,
               ),
               const SizedBox(height: 8),
               LoadingTile(
                 text:
                     'Tailoring subscription\nrecommendations to fit your\npreferences',
-                value: valuethress,
+                value: threeValue,
               ),
               const Spacer(),
-              valueall == 1
+              allValue == 1
                   ? NextButton(
                       padding: EdgeInsets.zero,
                       color: AppColors.deepBlue,

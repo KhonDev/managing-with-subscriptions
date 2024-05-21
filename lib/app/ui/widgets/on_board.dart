@@ -4,12 +4,12 @@ import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 class onBoard extends StatelessWidget {
   final AssetImage image;
   final Widget text;
-  final String text2;
+  final String textSecond;
   const onBoard({
     super.key,
     required this.image,
     required this.text,
-    required this.text2,
+    required this.textSecond,
   });
 
   @override
@@ -17,7 +17,7 @@ class onBoard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 27.0),
+        const SizedBox(height: 27.0),
         text,
         const SizedBox(height: 32.0),
         Container(
@@ -32,7 +32,7 @@ class onBoard extends StatelessWidget {
         const SizedBox(height: 32.0),
         SizedBox(
           height: 46,
-          child: Text(text2, style: TextStyles.body2s16),
+          child: Text(textSecond, style: TextStyles.body2s16),
         ),
       ],
     );

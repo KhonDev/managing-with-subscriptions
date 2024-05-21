@@ -27,11 +27,11 @@ class _AddServiceState extends State<AddService> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               BackWidget(),
-              Text(
+              const Text(
                 'Add service',
                 style: TextStyles.p2s16,
               ),
-              SizedBox(width: 66),
+              const SizedBox(width: 66),
             ],
           ),
           const SizedBox(height: 24.0),
@@ -125,7 +125,7 @@ class _AddServiceState extends State<AddService> {
                           border: Border.all(color: AppColors.grey),
                         ),
                         child: check != true
-                            ? SizedBox()
+                            ? const SizedBox()
                             : Padding(
                               padding: const EdgeInsets.all(3.0),
                               child: SvgPicture.asset(

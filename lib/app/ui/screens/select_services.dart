@@ -48,7 +48,7 @@ class _SelectSeviceesScreenState extends State<SelectSeviceesScreen> {
         onPressed: () {
           selected = index;
           svgName = image;
-          labelname = text;
+          lableName = text;
           print(svgName);
 
           setState(() {});
@@ -80,11 +80,11 @@ class _SelectSeviceesScreenState extends State<SelectSeviceesScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BackWidget(),
-                Text(
+                const Text(
                   'Select service',
                   style: TextStyles.p2s16,
                 ),
-                SizedBox(width: 66),
+                const SizedBox(width: 66),
               ],
             ),
             const SizedBox(height: 45),
@@ -121,7 +121,7 @@ class _SelectSeviceesScreenState extends State<SelectSeviceesScreen> {
               ),
               const SizedBox(height: 8),
             ]),
-            Spacer(),
+            const Spacer(),
             NextButton(
               padding: EdgeInsets.zero,
               foregroundColor: AppColors.white,

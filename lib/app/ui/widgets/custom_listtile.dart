@@ -52,7 +52,7 @@ class CustomTile extends StatelessWidget {
     return Container(
       height: 43,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.whiteF8,
         borderRadius: BorderRadius.all(
           Radius.circular(8),

@@ -27,11 +27,11 @@ class SupportScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BackWidget(),
-                Text(
+                const Text(
                   'Support',
                   style: TextStyles.p2s16,
                 ),
-                SizedBox(width: 66),
+                const SizedBox(width: 66),
               ],
             ),
             const SizedBox(height: 36),

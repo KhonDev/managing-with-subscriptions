@@ -18,27 +18,27 @@ class OnBoarding extends StatefulWidget {
 class _OnBoardingState extends State<OnBoarding> {
   PageController controller = PageController();
   int onLastPage = 0;
-  List onboard = [
+  List onBoardTile = [
     const onBoard(
       image: AssetImage(
         'assets/images/music.png',
       ),
       text: Text('Make Your Service\nManagement\nEasier',
           style: TextStyles.header1s32),
-      text2: 'Be aware of your spending on services and\nsubscriptions',
+      textSecond: 'Be aware of your spending on services and\nsubscriptions',
     ),
     const onBoard(
       image: AssetImage('assets/images/cinema.png'),
       text: Text('Don\'t let your money\ngo to no one knows\nwhere',
           style: TextStyles.header1s32),
-      text2:
+      textSecond:
           'Calculate your spending on services and\nsubscriptions months in advance',
     ),
     const onBoard(
       image: AssetImage('assets/images/game.png'),
       text: Text('Don\'t miss payments\nand keep your\nrecords',
           style: TextStyles.header1s32),
-      text2:
+      textSecond:
           'Don\'t be afraid to miss a charge, we will\nnotify you in advance',
     ),
   ];
@@ -82,7 +82,7 @@ class _OnBoardingState extends State<OnBoarding> {
               },
               children: List.generate(
                 3,
-                (index) => onboard[index],
+                (index) => onBoardTile[index],
               ),
             ),
             Container(

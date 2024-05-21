@@ -32,7 +32,7 @@ class NextButton extends StatelessWidget {
                 ),
               ),
               onPressed: onTap,
-              child: child)),
+              child: child),),
     );
   }
 }

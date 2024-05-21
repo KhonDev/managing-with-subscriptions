@@ -10,7 +10,7 @@ import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 String? svgName;
-String? labelname;
+String? lableName;
 
 class AddNotification extends StatefulWidget {
   const AddNotification({super.key});
@@ -20,31 +20,31 @@ class AddNotification extends StatefulWidget {
 }
 
 class _AddNotificationState extends State<AddNotification> {
-  bool check = false;
-  TextEditingController day = TextEditingController();
-  TextEditingController cost = TextEditingController();
+   bool check = false;
+  final TextEditingController day = TextEditingController();
+  final TextEditingController cost = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             children: [
-              SizedBox(height: 56),
+              const SizedBox(height: 56),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BackWidget(),
-                  Text(
+                  const Text(
                     'Add service',
                     style: TextStyles.p2s16,
                   ),
-                  SizedBox(width: 66),
+                  const SizedBox(width: 66),
                 ],
               ),
-              SizedBox(height: 36),
+              const SizedBox(height: 36),
               GestureDetector(
                 onTap: () {
                   GoRouter.of(context)
@@ -52,7 +52,7 @@ class _AddNotificationState extends State<AddNotification> {
                 },
                 child: Container(
                   height: 42,
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
                     color: AppColors.whiteF8,
                     borderRadius: BorderRadius.circular(8),
@@ -60,14 +60,14 @@ class _AddNotificationState extends State<AddNotification> {
                   child: Row(
                     children: [
                       svgName == null
-                          ? Text(
+                          ? const Text(
                               'Select service',
                               style: TextStyles.body1s14,
                             )
                           : Row(
                               children: [
                                 SvgPicture.asset('$svgName'),
-                                Text('$labelname'),
+                                Text('$lableName'),
                               ],
                             ),
                       const Spacer(),
@@ -112,7 +112,7 @@ class _AddNotificationState extends State<AddNotification> {
                           border: Border.all(color: AppColors.grey),
                         ),
                         child: check != true
-                            ? SizedBox()
+                            ? const SizedBox()
                             : Padding(
                                 padding: const EdgeInsets.all(3.0),
                                 child: SvgPicture.asset(

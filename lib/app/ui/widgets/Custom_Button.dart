@@ -10,13 +10,13 @@ class CustomButton extends StatelessWidget {
     return Container(
       height: 49,
       width: double.infinity,
-      child: Center(child: Text(title, style: TextStyles.p2s16W)),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.deepBlue,
         borderRadius: BorderRadius.all(
           Radius.circular(8),
         ),
       ),
+      child: Center(child: Text(title, style: TextStyles.p2s16W)),
     );
   }
 }
@@ -30,13 +30,13 @@ class CustomDeleteButton extends StatelessWidget {
     return Container(
       height: 49,
       width: double.infinity,
-      child: Center(child: Text(title, style: TextStyles.p2s16R)),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.pink,
         borderRadius: BorderRadius.all(
           Radius.circular(8),
         ),
       ),
+      child: Center(child: Text(title, style: TextStyles.p2s16R),),
     );
   }
 }

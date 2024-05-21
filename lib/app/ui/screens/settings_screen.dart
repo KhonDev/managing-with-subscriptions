@@ -33,19 +33,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(
+            const Spacer(
               flex: 3,
             ),
-            Text('Settings', style: TextStyles.header1s32),
-            Spacer(),
-            CustomListTile(),
-            Spacer(),
+            const Text('Settings', style: TextStyles.header1s32),
+            const Spacer(),
+            const CustomListTile(),
+            const Spacer(),
             GestureDetector(
               onTap: () {
                 GoRouter.of(context).pushNamed(MyAppRouteConstants.support,
                     pathParameters: {'send': send ?? ''});
               },
-              child: CustomTile(
+              child: const CustomTile(
                 svg: 'assets/vectors/support.svg',
                 text: 'Support',
               ),
@@ -102,12 +102,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               'delete your account?',
                               style: TextStyles.header2s24,
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             const Text(
                               'Deleted data cannot be returned',
                               style: TextStyles.s14w400grey,
                             ),
-                            SizedBox(height: 32),
+                            const SizedBox(height: 32),
                             Container(
                               width: double.infinity,
                               height: 49,

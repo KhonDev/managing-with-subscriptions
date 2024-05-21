@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-class appDatabase {
+class AppDatabase {
   List appList = [];
   final mybox = Hive.box('appbox');
 
