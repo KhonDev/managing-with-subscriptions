@@ -4,7 +4,7 @@ import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/resources/app_router_config.dart';
 import 'package:managing_with_subscriptions/resources/data.dart';
 
-appDatabase appDB = appDatabase();
+AppDatabase appDB = AppDatabase();
 
 void main() async {
   await Hive.initFlutter();

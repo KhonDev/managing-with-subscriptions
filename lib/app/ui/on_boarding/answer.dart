@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:managing_with_subscriptions/app/ui/on_boarding/splash_screen.dart';
+import 'package:hive/hive.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/answertile.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';

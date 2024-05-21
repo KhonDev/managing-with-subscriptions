@@ -167,7 +167,7 @@ class _AddNotificationState extends State<AddNotification> {
       floatingActionButton: NextButton(
           foregroundColor: AppColors.white,
           color: AppColors.deepBlue,
-          onTap: saveNewTask,
+          onTap: (){},
           child: const Text('Add', style: TextStyles.p2s16W)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
