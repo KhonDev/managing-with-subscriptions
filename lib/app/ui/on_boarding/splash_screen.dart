@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
-final mybox = Hive.box('mybox');
+  final mybox = Hive.box('userbox');
 
 class SpalshScreen extends StatefulWidget {
   const SpalshScreen({super.key});
@@ -15,15 +15,22 @@ class SpalshScreen extends StatefulWidget {
 
 class _SpalshScreenState extends State<SpalshScreen>
     with SingleTickerProviderStateMixin {
+
   @override
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).pushNamed(mybox.get(0) != null
-          ? MyAppRouteConstants.onBoardingRouteName
-          : MyAppRouteConstants.homeScreenRouteName);
-    });
+    if (mybox.get('List') == null) {
+      Future.delayed(const Duration(seconds: 2), () {
+        GoRouter.of(context).pushNamed(MyAppRouteConstants.onBoardingRouteName);
+      });
+    }
+    {
+      Future.delayed(const Duration(seconds: 2), () {
+        GoRouter.of(context).pushNamed(MyAppRouteConstants.homeScreenRouteName);
+      });
+      setState(() {});
+    }
   }
 
   @override

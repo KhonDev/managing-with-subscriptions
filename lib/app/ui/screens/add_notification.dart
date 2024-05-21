@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:managing_with_subscriptions/app/ui/screens/select_services.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/back.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/mytextfield.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
+import 'package:managing_with_subscriptions/main.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
 
 String? svgName;
@@ -24,27 +24,49 @@ class _AddNotificationState extends State<AddNotification> {
   TextEditingController day = TextEditingController();
   TextEditingController cost = TextEditingController();
 
+  void saveNewTask() {
+    // ignore: unnecessary_null_comparison
+    if (cost == null) {
+    } else {
+      // ignore: unnecessary_null_comparison
+      day == null
+          ? {}
+          : setState(() {
+              appDB.appList.add([
+                labelname,
+                svgName,
+                day.text.toString(),
+                cost.text.toString(),
+                check
+              ]);
+              GoRouter.of(context).pop();
+              appDB.updateData();
+            });
+            
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             children: [
-              SizedBox(height: 56),
+              const SizedBox(height: 56),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   BackWidget(),
-                  Text(
+                  const Text(
                     'Add service',
                     style: TextStyles.p2s16,
                   ),
-                  SizedBox(width: 66),
+                  const SizedBox(width: 66),
                 ],
               ),
-              SizedBox(height: 36),
+              const SizedBox(height: 36),
               GestureDetector(
                 onTap: () {
                   GoRouter.of(context)
@@ -52,7 +74,8 @@ class _AddNotificationState extends State<AddNotification> {
                 },
                 child: Container(
                   height: 42,
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
                     color: AppColors.whiteF8,
                     borderRadius: BorderRadius.circular(8),
@@ -60,7 +83,7 @@ class _AddNotificationState extends State<AddNotification> {
                   child: Row(
                     children: [
                       svgName == null
-                          ? Text(
+                          ? const Text(
                               'Select service',
                               style: TextStyles.body1s14,
                             )
@@ -80,16 +103,45 @@ class _AddNotificationState extends State<AddNotification> {
                 ),
               ),
               const SizedBox(height: 28),
-              MyTextField(
-                hint: 'dd.mm.yy',
-                title: 'Payment notification date',
-                controller: TextEditingController(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Payment notification date',
+                    style: TextStyles.footnote2s12Reg,
+                  ),
+                  const SizedBox(height: 8.0),
+                  TextField(
+                    maxLength: 10,
+                    controller: day,
+                    cursorColor: AppColors.deepBlue,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      counterText: '',
+                      contentPadding: const EdgeInsets.all(12),
+                      hintStyle: TextStyles.s14w400grey,
+                      isDense: true,
+                      hintText: 'dd.mm.yy',
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      filled: true,
+                      fillColor: AppColors.whiteF8,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 16),
               MyTextField(
+                type: TextInputType.datetime,
                 hint: '\$0',
                 title: 'Sum of payment',
-                controller: TextEditingController(),
+                controller: cost,
               ),
               const SizedBox(height: 16),
               Padding(
@@ -112,7 +164,7 @@ class _AddNotificationState extends State<AddNotification> {
                           border: Border.all(color: AppColors.grey),
                         ),
                         child: check != true
-                            ? SizedBox()
+                            ? const SizedBox()
                             : Padding(
                                 padding: const EdgeInsets.all(3.0),
                                 child: SvgPicture.asset(
@@ -136,11 +188,10 @@ class _AddNotificationState extends State<AddNotification> {
         ),
       ),
       floatingActionButton: NextButton(
-        foregroundColor: AppColors.white,
-        color: AppColors.deepBlue,
-        child: const Text('Add', style: TextStyles.p2s16W),
-        onTap: () {},
-      ),
+          foregroundColor: AppColors.white,
+          color: AppColors.deepBlue,
+          onTap: saveNewTask,
+          child: const Text('Add', style: TextStyles.p2s16W)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }

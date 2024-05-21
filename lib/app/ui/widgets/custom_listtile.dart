@@ -30,7 +30,7 @@ class _CustomListTileState extends State<CustomListTile> {
         ),
         trailing: CupertinoSwitch(
           activeColor: AppColors.deepBlue,
-          value: true,
+          value: switchValue,
           onChanged: (bool? value) {
             setState(() {
               switchValue = value ?? false;

@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/next_button.dart';
+import 'package:managing_with_subscriptions/main.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
+import 'package:managing_with_subscriptions/resources/notificationservices.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -27,8 +29,8 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   const SizedBox(height: 72.0),
-                  const Text(
-                    "- \$21,65 ",
+                  Text(
+                 'userDB.myList[0][0]',
                     style: TextStyles.s44w600cblack,
                   ),
                   const SizedBox(height: 8),
@@ -38,7 +40,7 @@ class _HomeState extends State<Home> {
                   ),
                   const SizedBox(height: 16),
                   NextButton(
-                    padding: EdgeInsets.zero,
+                      padding: EdgeInsets.zero,
                       color: AppColors.deepBlue,
                       foregroundColor: Colors.white,
                       child: const Text(
@@ -48,6 +50,9 @@ class _HomeState extends State<Home> {
                       onTap: () {
                         GoRouter.of(context)
                             .pushNamed(MyAppRouteConstants.addservice);
+                            NotificationServices().showNotification(
+                              title: 'add',body: 'service'
+                            );
                       }),
                   const SizedBox(height: 24),
                 ],

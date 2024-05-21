@@ -5,11 +5,12 @@ import 'package:managing_with_subscriptions/resources/app_router_config.dart';
 import 'package:managing_with_subscriptions/resources/data.dart';
 
 appDatabase appDB = appDatabase();
+userData userDB = userData();
 
 void main() async {
   await Hive.initFlutter();
-  var box = Hive.openBox('mybox');
-  var notificationBox = Hive.openBox('notification');
+  var listbox = await Hive.openBox('userbox');
+  var app_box = await Hive.openBox('appBox');
 
   runApp(const App());
 }
