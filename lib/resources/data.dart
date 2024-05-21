@@ -6,8 +6,8 @@ class AppDatabase {
 
   void createData() {
     appList = [
-      ['Spotify','assets/vectors/spotify' , '10.12.2024', '10'],
-      ['Neflix', 'assets/vectors/netflix','10.12.2024', '20'],
+      ['Spotify', 'assets/vectors/spotify', '10.12.2024', '10', false],
+      ['Neflix', 'assets/vectors/netflix', '10.12.2024', '20', false],
     ];
   }
 
@@ -17,5 +17,24 @@ class AppDatabase {
 
   void updateData() {
     mybox.put('APPLIST', appList);
+  }
+}
+
+class userData {
+  List myList = [];
+  final mybox = Hive.box('userbox');
+
+  void createData() {
+    myList = [
+     [0, 'user'],
+    ];
+  }
+
+  void loadData() {
+    myList = mybox.get('List');
+  }
+
+  void updateData() {
+    mybox.put('List', myList);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:managing_with_subscriptions/app/ui/screens/splash_screen.dart';
+import 'package:managing_with_subscriptions/app/ui/on_boarding/splash_screen.dart';
 import 'package:managing_with_subscriptions/app/ui/theme/app_colors.dart';
 import 'package:managing_with_subscriptions/app/ui/widgets/answertile.dart';
 import 'package:managing_with_subscriptions/resources/app_router_constants.dart';
@@ -16,6 +16,8 @@ class AnswerQuesion extends StatefulWidget {
 }
 
 class _AnswerQuesionState extends State<AnswerQuesion> {
+final mybox = Hive.box('userbox');
+
   PageController controller = PageController();
   int onLastPage = 0;
 
@@ -83,7 +85,7 @@ class _AnswerQuesionState extends State<AnswerQuesion> {
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeIn);
                       } else {
-                        mybox.put(0, [0,'user'],);
+                        mybox.put('List', [0,'user'],);
                         GoRouter.of(context)
                             .pushNamed(MyAppRouteConstants.progressing);
                             print(mybox.get(0),);

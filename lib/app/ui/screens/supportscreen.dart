@@ -23,7 +23,7 @@ class SupportScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 56),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 BackWidget(),
@@ -81,9 +81,7 @@ class SupportScreen extends StatelessWidget {
         ),
         onTap: () {
           send = 'send';
-          GoRouter.of(context).pop(
-            MyAppRouteConstants.settings
-          );
+          GoRouter.of(context).pop();
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -5,12 +5,16 @@ import 'package:managing_with_subscriptions/app/ui/theme/text_styles.dart';
 class MyTextField extends StatelessWidget {
   final String title;
   final String? hint;
+  final TextInputType? type;
+  final int? lenth;
   final TextEditingController controller;
-  const MyTextField({
+   const MyTextField({
     super.key,
     required this.title,
     this.hint,
+    this.lenth,
     required this.controller,
+    this.type,
   });
 
   @override
@@ -24,9 +28,14 @@ class MyTextField extends StatelessWidget {
         ),
         const SizedBox(height: 8.0),
         TextField(
+          
+          smartDashesType: SmartDashesType.enabled,
+          maxLength: lenth,
+          keyboardType: type ?? TextInputType.text,
           controller: controller,
           cursorColor: AppColors.deepBlue,
           decoration: InputDecoration(
+            
             contentPadding: const EdgeInsets.all(12),
             hintStyle: TextStyles.s14w400grey,
             isDense: true,
